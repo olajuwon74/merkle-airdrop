@@ -1,0 +1,11 @@
+{
+    "0xe20e7a27d3e4d4b8bd8603ebc37823ce64fa14bd": {
+        "address": "0xe20e7a27d3e4d4b8bd8603ebc37823ce64fa14bd",
+        "itemID": "0",
+        "amount": "10000000000"
+    },
+    "dropDetails": {
+        "contractAddress": "0x027Ffd3c119567e85998f4E6B9c3d83D5702660c",
+        "merkleroot": "0xc353246cdaab2cbf8e8576d32e22ee1be1da0706904331692ba951dd3119e3c9"
+    }
+}

@@ -4,6 +4,7 @@ require("@nomiclabs/hardhat-ethers");
 require("hardhat-contract-sizer");
 require("dotenv-safe").config();
 require("solidity-coverage");
+require(".env");
 //require('./tasks/generateDiamondABI.js')
 
 // This is a sample Buidler task. To learn how to create your own go to
@@ -35,7 +36,7 @@ module.exports = {
 
     matic: {
       url: process.env.MATIC_URL,
-      // url: 'https://rpc-mainnet.maticvigil.com/',
+      url: 'https://speedy-nodes-nyc.moralis.io/9795f22d081d6e53e5e35588/polygon/mainnet',
       accounts: [process.env.SECRET],
       //   // blockGasLimit: 20000000,
       //   blockGasLimit: 20000000,
@@ -60,12 +61,12 @@ module.exports = {
       gasPrice: 5000000000,
       timeout: 200000000,
     },
-    // ethereum: {
-    //   url: process.env.MAINNET_URL,
-    //   accounts: [process.env.SECRET],
-    //   blockGasLimit: 20000000,
-    //   gasPrice: 2100000000
-    // }
+    ethereum: {
+      url: process.env.MAINNET_URL,
+      accounts: [process.env.SECRET],
+      blockGasLimit: 20000000,
+      gasPrice: 2100000000
+    }
   },
   gasReporter: {
     currency: "USD",
