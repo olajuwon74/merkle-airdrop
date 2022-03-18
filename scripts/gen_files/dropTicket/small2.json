@@ -1,18 +1,10 @@
 {
-    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266": {
-        "address": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
-        "amount": "10000000000"
-    },
-    "0xbcd4042de499d14e55001ccbb24a551f3b954096": {
-        "address": "0xbcd4042de499d14e55001ccbb24a551f3b954096",
-        "amount": "10000000000"
-    },
-    "0x71be63f3384f5fb98995898a86b02fb2426c5788": {
-        "address": "0x71be63f3384f5fb98995898a86b02fb2426c5788",
+    "0x87AC3835E731E86b8D7A688269c3dD9B5Cdb21B8": {
+        "address": "0x87AC3835E731E86b8D7A688269c3dD9B5Cdb21B8",
         "amount": "10000000000"
     },
     "dropDetails": {
         "contractAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-        "merkleroot": "0x867bb7f70df1544a018e172f6c1fe4f2673061fecddac57dd18a3477d2cf00ca"
+        "merkleroot": "0x71bfaa2bb3dcfaaba36d71e9fa4deb827f5e59bfd2b29288fd07ab785f67a0ec"
     }
 }

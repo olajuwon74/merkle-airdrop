@@ -29,7 +29,7 @@ async function main() {
   const claimer = await ethers.getSigner(signers[0].address);
 
   //     const airdrop = await ethers.getContractFactory("Merkle");
-  //     const airdrop_con = await airdrop.deploy("0x867bb7f70df1544a018e172f6c1fe4f2673061fecddac57dd18a3477d2cf00ca")
+  //     const airdrop_con = await airdrop.deploy("0x71bfaa2bb3dcfaaba36d71e9fa4deb827f5e59bfd2b29288fd07ab785f67a0ec ")
   //     await airdrop_con.deployed();
 
   //  console.log("airdop deployed to:", airdrop_con.address);
@@ -40,7 +40,7 @@ async function main() {
   const trans = await ethers.getContractAt("BRT", "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0");
   console.log("(Before) BRT balance of claimer => ", (await trans.balanceOf(claimer.address)).toString());
   await trans.connect(claimer).transfer("0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9", "10000000000");
-  const balclaim = await trans.balanceOf(claimer.address);
+  let balclaim = await trans.balanceOf(claimer.address);
   const balmerk = await trans.balanceOf("0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9");
 
   console.log("(After) BRT balance of claimer => ", balclaim.toString());
@@ -64,6 +64,10 @@ async function main() {
       "10000000000"
     );
   console.log("receipt for airdrop claiming by claimer => ", claim_token);
+
+  balclaim = await trans.balanceOf(claimer.address);
+  console.log("(end) BRT balance of claimer => ", balclaim.toString());
+  
 }
 
 main().catch((error) => {
