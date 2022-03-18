@@ -2,9 +2,8 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 require("hardhat-contract-sizer");
-require("dotenv-safe").config();
+// require("dotenv-safe").config();
 require("solidity-coverage");
-require(".env");
 //require('./tasks/generateDiamondABI.js')
 
 // This is a sample Buidler task. To learn how to create your own go to
@@ -23,50 +22,44 @@ task("accounts", "Prints the list of accounts", async () => {
 // Go to https://buidler.dev/config/ to learn more
 module.exports = {
   networks: {
-    hardhat: {
-      forking: {
-        url: process.env.MATIC_URL,
-        // blockNumber: 16712208,
-        timeout: 1200000,
-      },
-    },
-    localhost: {
-      timeout: 1600000,
-    },
+    // hardhat: {
+    //   forking: {
+    //     url: process.env.KOVAN_URL,
+    //     // blockNumber: 16712208,
+    //     timeout: 1200000,
+    //   },
+    // },
+    // localhost: {
+    //   timeout: 1600000,
+    // },
 
-    matic: {
-      url: process.env.MATIC_URL,
-      url: 'https://speedy-nodes-nyc.moralis.io/9795f22d081d6e53e5e35588/polygon/mainnet',
-      accounts: [process.env.SECRET],
-      //   // blockGasLimit: 20000000,
-      //   blockGasLimit: 20000000,
-      gasPrice: 1000000000,
-      // timeout: 90000
-    },
+    // matic: {
+    //   url: process.env.MATIC_URL,
+    //   // url: 'https://rpc-mainnet.maticvigil.com/',
+    //   accounts: [process.env.SECRET],
+    //   //   // blockGasLimit: 20000000,
+    //   //   blockGasLimit: 20000000,
+    //   gasPrice: 1000000000,
+    //   // timeout: 90000
+    // },
     // mumbai: {
-    //   url: 'https://rpc-mumbai.matic.today',
+    //   url: 'https://rpc-mumbai.matic.today/',
     //   accounts: [process.env.SECRET],
     //   blockGasLimit: 20000000,
     //   gasPrice: 1000000000
     // },
-    // gorli: {
-    //   url: process.env.GORLI,
+    // kovan: {
+    //   url: process.env.KOVAN_URL,
+    //   accounts: [process.env.SECRET],
+    //   gasPrice: 5000000000,
+    //   timeout: 200000000,
+    // },
+    // ethereum: {
+    //   url: process.env.MAINNET_URL,
     //   accounts: [process.env.SECRET],
     //   blockGasLimit: 20000000,
     //   gasPrice: 2100000000
-    // },
-    kovan: {
-      url: process.env.KOVAN_URL,
-      accounts: [process.env.SECRET],
-      gasPrice: 5000000000,
-      timeout: 200000000,
-    },
-    ethereum: {
-      url: process.env.MAINNET_URL,
-      accounts: [process.env.SECRET],
-      blockGasLimit: 20000000,
-      gasPrice: 2100000000
-    }
+    // }
   },
   gasReporter: {
     currency: "USD",

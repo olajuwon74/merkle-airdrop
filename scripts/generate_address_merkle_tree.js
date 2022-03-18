@@ -24,7 +24,7 @@ function main() {
   );
 
   //contract of items being sent out
-  const airdropContract = "0x027Ffd3c119567e85998f4E6B9c3d83D5702660c";
+  const airdropContract = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
   // used to store one leaf for each line in the distribution file
   const token_dist = [];
@@ -36,10 +36,10 @@ function main() {
   fs.createReadStream(filename)
     .pipe(csv())
     .on("data", (row) => {
-      const user_dist = [row["user_address"], row["itemID"], row["amount"]]; // create record to track user_id of leaves
+      const user_dist = [row["user_address"], row["amount"]]; // create record to track user_id of leaves
       const leaf_hash = utils.solidityKeccak256(
-        ["address", "uint256", "uint256"],
-        [row["user_address"], row["itemID"], row["amount"]]
+        ["address", "uint256"],
+        [row["user_address"], row["amount"]]
       ); // encode base data like solidity abi.encode
       user_dist_list.push(user_dist); // add record to index tracker
       token_dist.push(leaf_hash); // add leaf hash to distribution
@@ -91,8 +91,7 @@ function main() {
         // console.log(gotchi_dist_list[line])
         const user_claim = {
           address: other[0],
-          itemID: other[1],
-          amount: other[2],
+          amount: other[1],
         };
         full_user_claim[user_dist_list[line][0]] = user_claim;
       }
