@@ -15,7 +15,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-
-// 0x73414aeae8dbefefacb4ded37a275b4607213c10def31e29bcef354a85cadd8e
-// 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 airdrop
-// 0x5FbDB2315678afecb367f032d93F642f64180aa3 token

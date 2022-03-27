@@ -12,10 +12,6 @@ contract Merkle{
     constructor(address _BRTAddress){
         BRT = IERC20(_BRTAddress);
     }
-
-    
-
-
     mapping(address => bool) public claimedAdrress; 
 
     uint index;
