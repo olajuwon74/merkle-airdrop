@@ -1,5 +1,8 @@
 # merkle-airdrop
 
+# contract verification
+0xF9C90fAdEBe19117a000588E3ff5D6A8AAF00f57
+
 Generates a list of abjects mapped to each address and root hash. Object contains the leaves and merkle proofs needed to verify that a given data exists for that address in the tree
 
 ## Overview
