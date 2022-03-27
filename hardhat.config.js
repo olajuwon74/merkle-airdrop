@@ -1,84 +1,18 @@
-/* global task ethers */
 require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-ethers");
-require("hardhat-contract-sizer");
-// require("dotenv-safe").config();
-require("solidity-coverage");
-//require('./tasks/generateDiamondABI.js')
+require("dotenv").config({ path: ".env" });
 
-// This is a sample Buidler task. To learn how to create your own go to
-// https://buidler.dev/guides/create-task.html
-task("accounts", "Prints the list of accounts", async () => {
-  const accounts = await ethers.getSigners();
+const ROPSTEN_URL = process.env.ROPSTEN_URL;
 
-  for (const account of accounts) {
-    console.log(await account.getAddress());
-  }
-});
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
-// You have to export an object to set up your config
-// This object can have the following optional entries:
-// defaultNetwork, networks, solc, and paths.
-// Go to https://buidler.dev/config/ to learn more
 module.exports = {
+  solidity: "0.8.4",
   networks: {
-    // hardhat: {
-    //   forking: {
-    //     url: process.env.KOVAN_URL,
-    //     // blockNumber: 16712208,
-    //     timeout: 1200000,
-    //   },
-    // },
-    // localhost: {
-    //   timeout: 1600000,
-    // },
-
-    // matic: {
-    //   url: process.env.MATIC_URL,
-    //   // url: 'https://rpc-mainnet.maticvigil.com/',
-    //   accounts: [process.env.SECRET],
-    //   //   // blockGasLimit: 20000000,
-    //   //   blockGasLimit: 20000000,
-    //   gasPrice: 1000000000,
-    //   // timeout: 90000
-    // },
-    mumbai: {
-      url: os.process.env.MATIC || ""
-      accounts: [process.env.SECRET],
-      blockGasLimit: 20000000,
-      gasPrice: 1000000000
-    },
-    // kovan: {
-    //   url: process.env.KOVAN_URL,
-    //   accounts: [process.env.SECRET],
-    //   gasPrice: 5000000000,
-    //   timeout: 200000000,
-    // },
-    // ethereum: {
-    //   url: process.env.MAINNET_URL,
-    //   accounts: [process.env.SECRET],
-    //   blockGasLimit: 20000000,
-    //   gasPrice: 2100000000
-    // }
-  },
-  gasReporter: {
-    currency: "USD",
-    gasPrice: 100,
-    enabled: false,
-  },
-  contractSizer: {
-    alphaSort: false,
-    runOnCompile: false,
-    disambiguatePaths: true,
-  },
-  // This is a sample solc configuration that specifies which version of solc to use
-  solidity: {
-    version: "0.8.1",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
+    ropsten: {
+      url: ROPSTEN_URL,
+      accounts: [PRIVATE_KEY],
+      gas: 2100000,
+      gasPrice: 8000000000,
     },
   },
 };
